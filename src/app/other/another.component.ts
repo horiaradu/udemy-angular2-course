@@ -3,15 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-another',
   template: `
-    <p>
+    <h1>
       another Works!
-    </p>
+    </h1>
   `,
   styles: []
 })
 export class AnotherComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
