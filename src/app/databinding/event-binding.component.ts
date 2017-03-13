@@ -8,7 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styles: []
 })
 export class EventBindingComponent {
-  @Output()
+  @Output('random-number')
   clicked = new EventEmitter<number>();
 
   onClick(param) {
