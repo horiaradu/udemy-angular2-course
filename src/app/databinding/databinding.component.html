@@ -2,9 +2,13 @@
 <p>{{ stringInterpolation }}</p>
 <p>{{ numberInterpolation }}</p>
 
+<hr>
+
 <h1>Property Binding</h1>
 <input type="text" [value]="stringInterpolation">
 <p [ngClass]="{'red-border': true}">Is this styled?</p>
+
+<hr>
 
 <h1>Custom Property Binding</h1>
 <p>{{result.name}}</p>
@@ -14,3 +18,8 @@
 
 <h1>Event Binding</h1>
 <app-event-binding (random-number)="onClick($event)"></app-event-binding>
+
+<hr>
+
+<h1>Two Way Binding</h1>
+<app-two-way-binding></app-two-way-binding>
