@@ -8,6 +8,7 @@ import { OtherComponent } from './other/other.component';
 import { AnotherComponent } from './other/another.component';
 import { WithPassedHtmlComponent } from './with-passed-html/with-passed-html.component';
 import { DatabindingComponent } from './databinding/databinding.component';
+import { PropertyBindingComponent } from './databinding/property-binding.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DatabindingComponent } from './databinding/databinding.component';
     OtherComponent,
     AnotherComponent,
     WithPassedHtmlComponent,
-    DatabindingComponent
+    DatabindingComponent,
+    PropertyBindingComponent
   ],
   imports: [
     BrowserModule,
