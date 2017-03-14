@@ -21,7 +21,7 @@
 <!--<si-service></si-service>-->
 
 <hr>
-<a [routerLink]="['']">Home</a> |
+<a [routerLink]="['']" [queryParams]="{analytics: 500}">Home</a> |
 
 <input type="text" #id (input)="0">
 <a [routerLink]="['user', id.value]">User</a>
