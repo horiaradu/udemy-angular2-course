@@ -15,6 +15,10 @@ import { LifecycleComponent } from './lifecycle.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { UnlessDirective } from './directives/unless.directive';
+import { CmpAComponent } from "./service/cmp-a.component";
+import { CmpBComponent } from "./service/cmp-b.component";
+import { ServiceComponent } from "./service/service.component";
+import { LogService } from "./service/log.service";
 
 @NgModule({
   declarations: [
@@ -29,14 +33,17 @@ import { UnlessDirective } from './directives/unless.directive';
     LifecycleComponent,
     DirectivesComponent,
     HighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    CmpAComponent,
+    CmpBComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
