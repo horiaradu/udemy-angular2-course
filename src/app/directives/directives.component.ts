@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  private switchVal = true;
+
+  onSwitch() {
+    this.switchVal = !this.switchVal;
+  }
+
+  private items = [1, 2, 3, 4, 5];
+
+  private value = 100;
 }
