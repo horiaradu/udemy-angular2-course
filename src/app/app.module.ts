@@ -19,6 +19,11 @@ import { CmpAComponent } from "./service/cmp-a.component";
 import { CmpBComponent } from "./service/cmp-b.component";
 import { ServiceComponent } from "./service/service.component";
 import { LogService } from "./service/log.service";
+import { HomeComponent } from "./routes/home-component.component";
+import { UserComponent } from "./routes/user/user.component";
+import { UserDetailComponent } from "./routes/user/user-detail.component";
+import { UserEditComponent } from "./routes/user/user-edit.component";
+import { routing } from "./app.routing";
 
 @NgModule({
   declarations: [
@@ -36,12 +41,17 @@ import { LogService } from "./service/log.service";
     UnlessDirective,
     CmpAComponent,
     CmpBComponent,
-    ServiceComponent
+    ServiceComponent,
+    HomeComponent,
+    UserComponent,
+    UserDetailComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [LogService],
   bootstrap: [AppComponent]
