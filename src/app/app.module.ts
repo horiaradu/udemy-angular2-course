@@ -24,6 +24,8 @@ import { UserComponent } from "./routes/user/user.component";
 import { UserDetailComponent } from "./routes/user/user-detail.component";
 import { UserEditComponent } from "./routes/user/user-edit.component";
 import { routing } from "./app.routes";
+import { UserDetailGuard } from "./routes/user/user-detail.guard";
+import { UserEditGuard } from "./routes/user/user-edit.guard";
 
 @NgModule({
   declarations: [
@@ -53,7 +55,7 @@ import { routing } from "./app.routes";
     HttpModule,
     routing
   ],
-  providers: [LogService],
+  providers: [LogService, UserDetailGuard, UserEditGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
