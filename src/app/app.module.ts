@@ -23,7 +23,7 @@ import { HomeComponent } from "./routes/home-component.component";
 import { UserComponent } from "./routes/user/user.component";
 import { UserDetailComponent } from "./routes/user/user-detail.component";
 import { UserEditComponent } from "./routes/user/user-edit.component";
-import { routing } from "./app.routing";
+import { routing } from "./app.routes";
 
 @NgModule({
   declarations: [
