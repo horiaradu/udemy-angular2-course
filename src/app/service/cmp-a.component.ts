@@ -40,7 +40,7 @@ export class CmpAComponent {
   }
 
   onSend(value: string) {
-
+    this.dataService.pushData(value);
   }
 
   constructor(private logService: LogService, private dataService: DataService) {

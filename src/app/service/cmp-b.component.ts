@@ -39,9 +39,9 @@ export class CmpBComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataService.pushDataEvEmitter.subscribe(event => this.value = event);
   }
 
   constructor(private logService: LogService, private dataService: DataService) {
-
   }
 }

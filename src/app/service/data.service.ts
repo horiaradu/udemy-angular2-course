@@ -1,8 +1,10 @@
 import { LogService } from "./log.service";
-import { Injectable } from "@angular/core";
+import { Injectable, Output, EventEmitter } from "@angular/core";
 
 @Injectable() // without this, u can't inject stuff inside this service
 export class DataService {
+  pushDataEvEmitter = new EventEmitter<string>();
+
   private data: string[] = [];
 
   constructor(private logService: LogService) {
@@ -15,5 +17,9 @@ export class DataService {
 
   getData() {
     return this.data;
+  }
+
+  pushData(value: string) {
+    this.pushDataEvEmitter.emit(value);
   }
 }
