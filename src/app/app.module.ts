@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AlertModule } from "ng2-bootstrap";
 
 import { AppComponent } from './app.component';
 import { OtherComponent } from './other/other.component';
@@ -26,6 +27,8 @@ import { UserEditComponent } from "./routes/user/user-edit.component";
 import { routing } from "./app.routes";
 import { UserDetailGuard } from "./routes/user/user-detail.guard";
 import { UserEditGuard } from "./routes/user/user-edit.guard";
+import { DataDrivenComponent } from "./forms/data-driven/data-driven.component";
+import { TemplateDrivenComponent } from "./forms/template-driven/template-driven.component";
 
 @NgModule({
   declarations: [
@@ -47,13 +50,16 @@ import { UserEditGuard } from "./routes/user/user-edit.guard";
     HomeComponent,
     UserComponent,
     UserDetailComponent,
-    UserEditComponent
+    UserEditComponent,
+    DataDrivenComponent,
+    TemplateDrivenComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    AlertModule.forRoot()
   ],
   providers: [LogService, UserDetailGuard, UserEditGuard],
   bootstrap: [AppComponent]
