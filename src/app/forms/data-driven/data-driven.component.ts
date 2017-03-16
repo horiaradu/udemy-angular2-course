@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray, FormBuilder } from "@angular/forms";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'data-driven',
@@ -35,7 +36,7 @@ export class DataDrivenComponent implements OnInit {
 
     this.myForm = this.formBuilder.group({
       userData: this.formBuilder.group({
-        username: ['Horia', Validators.required],
+        username: ['Horia', [Validators.required, this.exampleValidator], [this.asyncExampleValidator]],
         email: ['horia@radu.com',
           [Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])+")]
         ]
@@ -54,5 +55,25 @@ export class DataDrivenComponent implements OnInit {
 
   addHobby() {
     (<FormArray>this.myForm.controls['hobbies']).push(new FormControl('', Validators.required));
+  }
+
+  exampleValidator(control: FormControl): { [s: string]: boolean } {
+    if (control.value === 'Example') {
+      return { example: true };
+    } else {
+      return null;
+    }
+  }
+
+  asyncExampleValidator(control: FormControl): Promise<any>|Observable<any> {
+    return new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'AsyncExample') {
+          resolve({ invalid: true });
+        } else {
+          resolve(null);
+        }
+      }, 1500);
+    });
   }
 }
