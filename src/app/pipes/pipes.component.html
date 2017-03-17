@@ -14,8 +14,16 @@
           class="btn btn-default">
     Add Item
   </button>
+  <button (click)="values = values.concat(newItem.value)"
+          class="btn btn-default">
+    Pure Add Item
+  </button>
 
   <ul>
     <li *ngFor="let item of values | filter:'ea'">{{item}}</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let item of values | filterImpure:'ea'">{{item}}</li>
   </ul>
 </div>

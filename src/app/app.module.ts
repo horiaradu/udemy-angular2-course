@@ -32,6 +32,7 @@ import { TemplateDrivenComponent } from "./forms/template-driven/template-driven
 import { PipesComponent } from './pipes/pipes.component';
 import { DoublePipe } from './pipes/double.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FilterImpurePipe } from './pipes/filter-impure.pipe';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     TemplateDrivenComponent,
     PipesComponent,
     DoublePipe,
-    FilterPipe
+    FilterPipe,
+    FilterImpurePipe
   ],
   imports: [
     BrowserModule,
