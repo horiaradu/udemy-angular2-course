@@ -33,6 +33,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { DoublePipe } from './pipes/double.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FilterImpurePipe } from './pipes/filter-impure.pipe';
+import { HttpComponent } from './http/http.component';
+import { HttpService } from "./http/http.service";
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { FilterImpurePipe } from './pipes/filter-impure.pipe';
     PipesComponent,
     DoublePipe,
     FilterPipe,
-    FilterImpurePipe
+    FilterImpurePipe,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +73,7 @@ import { FilterImpurePipe } from './pipes/filter-impure.pipe';
     AlertModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [LogService, UserDetailGuard, UserEditGuard],
+  providers: [LogService, UserDetailGuard, UserEditGuard, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
