@@ -8,6 +8,12 @@
   <input type="text" #input (keyup)="0">
   <p>{{ input.value | double:3:4 }}</p>
 
+  <hr>
+  <input type="text" #newItem>
+  <button (click)="values.push(newItem.value)"
+          class="btn btn-default">
+    Add Item
+  </button>
 
   <ul>
     <li *ngFor="let item of values | filter:'ea'">{{item}}</li>
