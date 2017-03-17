@@ -1,0 +1,15 @@
+<div>
+  <h1>Pipes</h1>
+
+  <p>{{ myValue | uppercase }}</p>
+  <p>{{ myDate | date:"MM/dd/yy" }}</p>
+  <p>{{ myValue | slice:3:7 | uppercase }}</p>
+
+  <input type="text" #input (keyup)="0">
+  <p>{{ input.value | double:3:4 }}</p>
+
+
+  <ul>
+    <li *ngFor="let item of values | filter:'ea'">{{item}}</li>
+  </ul>
+</div>

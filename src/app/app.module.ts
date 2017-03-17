@@ -29,6 +29,9 @@ import { UserDetailGuard } from "./routes/user/user-detail.guard";
 import { UserEditGuard } from "./routes/user/user-edit.guard";
 import { DataDrivenComponent } from "./forms/data-driven/data-driven.component";
 import { TemplateDrivenComponent } from "./forms/template-driven/template-driven.component";
+import { PipesComponent } from './pipes/pipes.component';
+import { DoublePipe } from './pipes/double.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { TemplateDrivenComponent } from "./forms/template-driven/template-driven
     UserDetailComponent,
     UserEditComponent,
     DataDrivenComponent,
-    TemplateDrivenComponent
+    TemplateDrivenComponent,
+    PipesComponent,
+    DoublePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
