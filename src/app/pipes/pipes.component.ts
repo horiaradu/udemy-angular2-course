@@ -9,4 +9,7 @@ export class PipesComponent {
   myValue = 'lowercase';
   myDate = new Date();
   values = ['Milk', 'Bread', 'Beans'];
+  asyncValue = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Data is here'), 2000)
+  })
 }
