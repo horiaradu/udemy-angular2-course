@@ -35,6 +35,12 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { FilterImpurePipe } from './pipes/filter-impure.pipe';
 import { HttpComponent } from './http/http.component';
 import { HttpService } from "./http/http.service";
+import { SigninComponent } from "./auth/unprotected/signin.component";
+import { SignupComponent } from "./auth/unprotected/signup.component";
+import { HeaderComponent } from "./auth/shared/header.component";
+import { ProtectedComponent } from "./auth/protected/protected.component";
+import { AuthService } from "./auth/shared/auth.service";
+import { AuthGuard } from "./auth/shared/auth.guard";
 
 @NgModule({
   declarations: [
@@ -63,7 +69,11 @@ import { HttpService } from "./http/http.service";
     DoublePipe,
     FilterPipe,
     FilterImpurePipe,
-    HttpComponent
+    HttpComponent,
+    SigninComponent,
+    SignupComponent,
+    HeaderComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +83,7 @@ import { HttpService } from "./http/http.service";
     AlertModule.forRoot(),
     ReactiveFormsModule
   ],
-  providers: [LogService, UserDetailGuard, UserEditGuard, HttpService],
+  providers: [LogService, UserDetailGuard, UserEditGuard, HttpService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
